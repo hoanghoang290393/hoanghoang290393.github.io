@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://hoanghoang290393.github.io/fillhand/sitemap.xml

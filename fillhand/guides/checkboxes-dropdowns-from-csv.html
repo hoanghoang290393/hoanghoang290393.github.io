@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Fill checkboxes, radio buttons and dropdowns from CSV</title>
+<meta name="description" content="Map yes/no columns to checkboxes, option text to dropdowns and radio groups, and several choices in one cell. Works on React forms too.">
+<link rel="canonical" href="https://hoanghoang290393.github.io/fillhand/guides/checkboxes-dropdowns-from-csv.html">
+
+<meta property="og:title" content="Fill checkboxes, radio buttons and dropdowns from CSV">
+<meta property="og:description" content="Map yes/no columns to checkboxes, option text to dropdowns and radio groups, and several choices in one cell. Works on React forms too.">
+<meta property="og:image" content="https://hoanghoang290393.github.io/fillhand/img/en-1.png">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../img/icon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../site.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"HowTo","name":"Fill checkboxes, radio buttons and dropdowns from CSV","description":"Map yes/no columns to checkboxes, option text to dropdowns and radio groups, and several choices in one cell. Works on React forms too."}</script>
+</head>
+<body>
+<header class="top">
+  <a class="brand" href="../index.html"><img src="../img/icon.svg" alt="" width="28" height="28"> Fillhand</a>
+  <nav>
+    <a href="../guides/fill-web-form-from-excel.html">Guides</a>
+    <a href="../imacros-alternative.html">iMacros</a>
+    <a href="../pricing.html">Pricing</a>
+    <a href="../teams.html">Teams</a>
+    <a class="nav-cta" href="https://chromewebstore.google.com/search/fillhand" rel="noopener">Install</a>
+  </nav>
+</header>
+<main>
+
+<article class="prose">
+  <p class="eyebrow">Guide</p>
+  <h1>Checkboxes, radio buttons and dropdowns from CSV columns</h1>
+  <p class="lead">Text fields are easy. The forum threads are full of the rest: ticking boxes from a column, picking the right option, multi-selects. Here is how Fillhand handles each.</p>
+  <div class="callout"><strong>What you need:</strong> Chrome, the free Fillhand extension and your CSV or Excel file. No account, no code. Your data never leaves your computer.</div>
+  <h2>Step by step</h2>
+  <ol class="steps"><li>Record the form once, ticking and choosing as usual.</li><li><b>Checkbox</b> step → <b>Tick from data</b>: <code>{{row.Newsletter}}</code>. <code>yes, y, x, 1, true, có</code> tick; <code>no, n, 0, false</code> or empty untick.</li><li><b>A group of checkboxes</b> from one cell: put the options in the cell separated by <code>;</code> — <code>News; Sales</code>. Fillhand ticks those and unticks the rest. Values or label text both work.</li><li><b>Radio buttons</b>: <b>Tick from data</b> with the option's label or value — <code>Medium</code>.</li><li><b>Dropdowns</b>: the <b>Choose</b> step's value <code>{{row.Country}}</code> matches the option value, then the visible text, ignoring case.</li><li><b>Multi-select lists</b>: <code>Red; Blue</code> selects both.</li><li><b>Custom dropdowns</b> (the ones that are really divs): record clicking the box and then the option; Fillhand records the option by its text, so <code>{{row.Country}}</code> works in the click step's text.</li></ol>
+  <h2>Tips that save a rerun</h2>
+  <ul><li>If a value isn't found, the run stops on that row and says “option not found: …” — usually a spelling difference in the sheet.</li><li>Frameworks like React ignore values set the wrong way; Fillhand fires the same events a real user would.</li></ul>
+  <div class="end-cta"><a class="cta" href="https://chromewebstore.google.com/search/fillhand" rel="noopener">Add to Chrome — free</a><p>Free: unlimited runs and recording. Running once per spreadsheet row is part of Pro ($8.99/month or $69/year).</p></div>
+  <h2>Related guides</h2>
+  <ul class="related"><li><a href="../guides/fill-web-form-from-excel.html">Fill any web form from Excel</a></li><li><a href="../guides/google-forms-from-spreadsheet.html">Google Forms from a spreadsheet</a></li></ul>
+</article>
+</main>
+<footer class="foot">
+  <div>
+    <strong>Fillhand</strong>
+    <p>Fill web forms and repeat web tasks — on your own computer.</p>
+  </div>
+  <div>
+    <a href="../guides/fill-web-form-from-excel.html">Fill a form from Excel</a>
+    <a href="../guides/google-forms-from-spreadsheet.html">Google Forms from a sheet</a>
+    <a href="../guides/bulk-add-products-from-csv.html">Products from CSV</a>
+    <a href="../guides/checkboxes-dropdowns-from-csv.html">Checkboxes &amp; dropdowns</a>
+    <a href="../guides/update-records-from-list-of-links.html">Loop over links</a>
+    <a href="../guides/same-client-into-many-portals.html">One client, many portals</a>
+  </div>
+  <div>
+    <a href="../imacros-alternative.html">iMacros alternative</a>
+    <a href="../autofill-alternative.html">Autofill without limits</a>
+    <a href="../teams.html">For IT &amp; teams</a>
+    <a href="../privacy.html">Privacy</a>
+    <a href="../vi/index.html">Tiếng Việt</a>
+    <a href="https://github.com/hoanghoang290393/hoanghoang290393.github.io/issues">Support</a>
+  </div>
+</footer>
+</body>
+</html>

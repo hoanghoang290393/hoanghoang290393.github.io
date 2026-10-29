@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Fillhand for teams — deploy shared macros with Chrome policy</title>
+<meta name="description" content="Roll out Fillhand to a team with Chrome policy: licence key, read-only shared macros, sync/export off. No server, no admin account.">
+<link rel="canonical" href="https://hoanghoang290393.github.io/fillhand/teams.html">
+
+<meta property="og:title" content="Fillhand for teams — deploy shared macros with Chrome policy">
+<meta property="og:description" content="Roll out Fillhand to a team with Chrome policy: licence key, read-only shared macros, sync/export off. No server, no admin account.">
+<meta property="og:image" content="https://hoanghoang290393.github.io/fillhand/img/en-1.png">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="img/icon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="site.css">
+
+</head>
+<body>
+<header class="top">
+  <a class="brand" href="index.html"><img src="img/icon.svg" alt="" width="28" height="28"> Fillhand</a>
+  <nav>
+    <a href="guides/fill-web-form-from-excel.html">Guides</a>
+    <a href="imacros-alternative.html">iMacros</a>
+    <a href="pricing.html">Pricing</a>
+    <a href="teams.html">Teams</a>
+    <a class="nav-cta" href="https://chromewebstore.google.com/search/fillhand" rel="noopener">Install</a>
+  </nav>
+</header>
+<main>
+
+<article class="prose">
+  <p class="eyebrow">For IT</p>
+  <h1>Fillhand for teams</h1>
+  <p class="lead">Give a team of 3 to 50 the same macros and autofill profiles, with no server and no new admin console. Everything goes through the Chrome policy you already use.</p>
+  <h2>Roll-out</h2>
+  <ol class="steps"><li><a href="https://buy.polar.sh/polar_cl_29MxlbnYoyxixlpvVE5mzLjVf80iQt584Wa2o468V3O">Buy Team</a> ($45/month or $449/year for 5 users; buy another Team for more). You receive one licence key that works on 5 computers.</li><li>Google Admin → Devices → Chrome → Apps &amp; extensions (or GPO / macOS plist): add the Fillhand extension ID as <b>Force install</b>, pinned.</li><li>In <b>Policy for extensions</b> paste the JSON below.</li><li>On a test machine open <code>chrome://policy</code> → Reload policies and check the Fillhand entry.</li></ol>
+  <pre><code>{
+  "LicenseKey":    { "Value": "FILLHAND-…" },
+  "Library":       { "Value": "&lt;contents of a Fillhand backup file&gt;" },
+  "DisableSync":   { "Value": true },
+  "DisableExport": { "Value": true }
+}</code></pre>
+  <ul>
+    <li><b>Library</b> — macros and profiles every user gets, labelled “Organization”, read-only, updated when you change the policy. Users can duplicate one to adapt it.</li>
+    <li><b>LicenseKey</b> — activates Team on every machine; the licence field is locked.</li>
+    <li><b>DisableSync / DisableExport</b> — keep data from leaving the machine through Chrome sync, file export or CSV download.</li>
+  </ul>
+  <h2 id="security">Security summary</h2>
+  <ul>
+    <li>No servers, no accounts, no analytics. Code runs locally; no remote code (Manifest V3).</li>
+    <li>Only outbound request: licence check to <code>api.polar.sh</code>.</li>
+    <li>Password fields and values marked sensitive are never recorded, synced or exported.</li>
+    <li>Site access is broad because users automate arbitrary internal sites; the content script acts only when a user runs a macro or has an autofill profile for that site.</li>
+    <li>CAPTCHAs are never solved or bypassed.</li>
+  </ul>
+  <p>Questions or a purchase order: <a href="https://github.com/hoanghoang290393/hoanghoang290393.github.io/issues">open a support request</a>.</p>
+</article>
+</main>
+<footer class="foot">
+  <div>
+    <strong>Fillhand</strong>
+    <p>Fill web forms and repeat web tasks — on your own computer.</p>
+  </div>
+  <div>
+    <a href="guides/fill-web-form-from-excel.html">Fill a form from Excel</a>
+    <a href="guides/google-forms-from-spreadsheet.html">Google Forms from a sheet</a>
+    <a href="guides/bulk-add-products-from-csv.html">Products from CSV</a>
+    <a href="guides/checkboxes-dropdowns-from-csv.html">Checkboxes &amp; dropdowns</a>
+    <a href="guides/update-records-from-list-of-links.html">Loop over links</a>
+    <a href="guides/same-client-into-many-portals.html">One client, many portals</a>
+  </div>
+  <div>
+    <a href="imacros-alternative.html">iMacros alternative</a>
+    <a href="autofill-alternative.html">Autofill without limits</a>
+    <a href="teams.html">For IT &amp; teams</a>
+    <a href="privacy.html">Privacy</a>
+    <a href="vi/index.html">Tiếng Việt</a>
+    <a href="https://github.com/hoanghoang290393/hoanghoang290393.github.io/issues">Support</a>
+  </div>
+</footer>
+</body>
+</html>

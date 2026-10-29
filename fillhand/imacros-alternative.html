@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>iMacros alternative for Chrome — import your .iim macros</title>
+<meta name="description" content="iMacros no longer runs in Chrome. Import your .iim files into Fillhand, keep your CSV datasource and run them again — free.">
+<link rel="canonical" href="https://hoanghoang290393.github.io/fillhand/imacros-alternative.html">
+
+<meta property="og:title" content="iMacros alternative for Chrome — import your .iim macros">
+<meta property="og:description" content="iMacros no longer runs in Chrome. Import your .iim files into Fillhand, keep your CSV datasource and run them again — free.">
+<meta property="og:image" content="https://hoanghoang290393.github.io/fillhand/img/en-1.png">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="img/icon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="site.css">
+
+</head>
+<body>
+<header class="top">
+  <a class="brand" href="index.html"><img src="img/icon.svg" alt="" width="28" height="28"> Fillhand</a>
+  <nav>
+    <a href="guides/fill-web-form-from-excel.html">Guides</a>
+    <a href="imacros-alternative.html">iMacros</a>
+    <a href="pricing.html">Pricing</a>
+    <a href="teams.html">Teams</a>
+    <a class="nav-cta" href="https://chromewebstore.google.com/search/fillhand" rel="noopener">Install</a>
+  </nav>
+</header>
+<main>
+
+<article class="prose">
+  <p class="eyebrow">Migration guide</p>
+  <h1>iMacros stopped working in Chrome. Bring your macros with you.</h1>
+  <p class="lead">Chrome disabled iMacros as part of the Manifest V2 shutdown. If you still have a folder of <code>.iim</code> files that fill forms from a CSV, Fillhand can import them and run them again.</p>
+  <a class="cta" href="https://chromewebstore.google.com/search/fillhand" rel="noopener">Install Fillhand — free</a>
+  <h2>Import in one minute</h2>
+  <ol class="steps"><li>Install Fillhand and open its side panel.</li><li>On the <b>Macros</b> tab click <b>Import iMacros</b> and pick your <code>.iim</code> file.</li><li>Read the short list of notes at the top of the new macro — every line Fillhand could not translate is listed with its line number.</li><li>If the macro used <code>SET !DATASOURCE</code>, import the same CSV on the <b>Data</b> tab. iMacros CSVs usually have no header row: choose <b>⋯ → First row is data</b>.</li><li>Set the macro's data source to that file and press <b>Run</b>. <code>{{!COL1}}</code> became <code>{{row.#1}}</code>, so column order stays the same.</li></ol>
+  <h2>What is translated</h2>
+  <table>
+    <thead><tr><th>iMacros</th><th>Fillhand</th></tr></thead>
+    <tbody>
+      <tr><td><code>URL GOTO=…</code></td><td>Go to page</td></tr>
+      <tr><td><code>TAG … CONTENT=…</code> on text, textarea, email…</td><td>Type</td></tr>
+      <tr><td><code>TAG TYPE=SELECT CONTENT=%value</code> / <code>$text</code></td><td>Choose (by value or visible text; several with <code>:</code>)</td></tr>
+      <tr><td><code>TAG TYPE=INPUT:CHECKBOX CONTENT=YES|NO|{{!COLn}}</code></td><td>Tick, also from a yes/no column</td></tr>
+      <tr><td><code>TAG …</code> without CONTENT, buttons, links (<code>ATTR=TXT:…</code>)</td><td>Click</td></tr>
+      <tr><td><code>TAG … EXTRACT=TXT|HREF|…</code></td><td>Read value (shown in results, exportable as CSV)</td></tr>
+      <tr><td><code>POS=n</code>, <code>FORM=NAME:…|ID:…</code>, <code>ATTR=A:x&amp;&amp;B:y</code>, <code>*</code> wildcards</td><td>Same element</td></tr>
+      <tr><td><code>WAIT SECONDS=n</code></td><td>Wait</td></tr>
+      <tr><td><code>SET !VARn …</code>, <code>{{!VARn}}</code>, <code>{{!LOOP}}</code>, <code>&lt;SP&gt;</code>, <code>&lt;BR&gt;</code></td><td>Filled in, or <code>{{iteration}}</code></td></tr>
+      <tr><td><code>SET !DATASOURCE</code>, <code>{{!COLn}}</code></td><td>Data source, <code>{{row.#n}}</code></td></tr>
+      <tr><td><code>FRAME F=n</code></td><td>Steps run inside that iframe</td></tr>
+      <tr><td><code>EVENT TYPE=CLICK|KEYPRESS SELECTOR=…</code></td><td>Click / key / type</td></tr>
+      <tr><td><code>ONDIALOG</code></td><td>Not needed — pop-ups are answered OK during runs</td></tr>
+    </tbody>
+  </table>
+  <h2>What you redo by hand</h2>
+  <ul>
+    <li><b>Passwords.</b> iMacros stored them encrypted; Fillhand never imports or records them. Log in yourself before the run, or type into the marked step.</li>
+    <li><b>XPATH, screen-coordinate clicks, EVAL() JavaScript.</b> Re-pick the element with the picker (two clicks).</li>
+    <li><b>File uploads and SAVEAS.</b> Browsers do not let extensions choose files for you.</li>
+  </ul>
+  <h2>Why people switch to Fillhand</h2>
+  <ul>
+    <li>Runs on current Chrome (Manifest V3) and Microsoft Edge.</li>
+    <li>No account and no server — same as iMacros, your data stays local.</li>
+    <li>Failed rows are flagged and can be re-run alone; a status column goes into the exported CSV.</li>
+    <li>Free for unlimited runs; spreadsheet runs are $8.99/month — no enterprise licence needed.</li>
+  </ul>
+  <div class="faq"><details><summary>My macro used a CSV with a header row.</summary><p>Then skip “First row is data”. Positional placeholders like {{row.#2}} work with or without a header, and you can rename them to {{row.Email}} later.</p></details><details><summary>Can I convert many .iim files at once?</summary><p>Import them one by one for now — each import shows its own checklist, which is what keeps conversions honest.</p></details><details><summary>Something did not convert right.</summary><p>Open an issue at <a href="https://github.com/hoanghoang290393/hoanghoang290393.github.io/issues">our support page</a> with the .iim file (remove anything private) and we will fix the importer.</p></details></div>
+</article>
+</main>
+<footer class="foot">
+  <div>
+    <strong>Fillhand</strong>
+    <p>Fill web forms and repeat web tasks — on your own computer.</p>
+  </div>
+  <div>
+    <a href="guides/fill-web-form-from-excel.html">Fill a form from Excel</a>
+    <a href="guides/google-forms-from-spreadsheet.html">Google Forms from a sheet</a>
+    <a href="guides/bulk-add-products-from-csv.html">Products from CSV</a>
+    <a href="guides/checkboxes-dropdowns-from-csv.html">Checkboxes &amp; dropdowns</a>
+    <a href="guides/update-records-from-list-of-links.html">Loop over links</a>
+    <a href="guides/same-client-into-many-portals.html">One client, many portals</a>
+  </div>
+  <div>
+    <a href="imacros-alternative.html">iMacros alternative</a>
+    <a href="autofill-alternative.html">Autofill without limits</a>
+    <a href="teams.html">For IT &amp; teams</a>
+    <a href="privacy.html">Privacy</a>
+    <a href="vi/index.html">Tiếng Việt</a>
+    <a href="https://github.com/hoanghoang290393/hoanghoang290393.github.io/issues">Support</a>
+  </div>
+</footer>
+</body>
+</html>

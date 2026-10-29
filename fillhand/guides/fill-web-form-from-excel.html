@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>How to fill a web form from Excel automatically (no code)</title>
+<meta name="description" content="Turn each row of an Excel or CSV file into a submitted web form. Record once, replay per row, re-run only failed rows. No code.">
+<link rel="canonical" href="https://hoanghoang290393.github.io/fillhand/guides/fill-web-form-from-excel.html">
+
+<meta property="og:title" content="How to fill a web form from Excel automatically (no code)">
+<meta property="og:description" content="Turn each row of an Excel or CSV file into a submitted web form. Record once, replay per row, re-run only failed rows. No code.">
+<meta property="og:image" content="https://hoanghoang290393.github.io/fillhand/img/en-1.png">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../img/icon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../site.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"HowTo","name":"How to fill a web form from Excel automatically (no code)","description":"Turn each row of an Excel or CSV file into a submitted web form. Record once, replay per row, re-run only failed rows. No code."}</script>
+</head>
+<body>
+<header class="top">
+  <a class="brand" href="../index.html"><img src="../img/icon.svg" alt="" width="28" height="28"> Fillhand</a>
+  <nav>
+    <a href="../guides/fill-web-form-from-excel.html">Guides</a>
+    <a href="../imacros-alternative.html">iMacros</a>
+    <a href="../pricing.html">Pricing</a>
+    <a href="../teams.html">Teams</a>
+    <a class="nav-cta" href="https://chromewebstore.google.com/search/fillhand" rel="noopener">Install</a>
+  </nav>
+</header>
+<main>
+
+<article class="prose">
+  <p class="eyebrow">Guide</p>
+  <h1>How to fill a web form from an Excel sheet, row by row</h1>
+  <p class="lead">You have a spreadsheet with 300 rows and a web form that takes one record at a time. Here is how to have Chrome type them in for you — and know which ones failed.</p>
+  <div class="callout"><strong>What you need:</strong> Chrome, the free Fillhand extension and your Excel or CSV file. No account, no code. Your data never leaves your computer.</div>
+  <h2>Step by step</h2>
+  <ol class="steps"><li>Install Fillhand and pin it. Click the toolbar icon to open the side panel.</li><li>Open the form in a tab. In the panel, choose <b>Record new</b> and fill the form once by hand, exactly as you normally would — type, pick from dropdowns, tick boxes, click Save.</li><li>Click <b>Stop</b>. Each action is now a step you can read and edit.</li><li>Go to <b>Data</b> and import your CSV or Excel (.xlsx) file. The first row should hold the column names.</li><li>Open the macro, set <b>Data source</b> to your file, and replace each typed value with a placeholder: click the value, then <code>{{row.Email}}</code>, <code>{{row.Company}}</code> … (the panel lists your columns).</li><li>Press <b>Run</b>. Fillhand repeats the macro once per row and shows ✓ or ✗ for each one.</li><li>If a row fails, the panel shows which step and why. Fix it and press <b>Run failed and remaining rows</b> — rows already done are not entered twice.</li><li>Export the results as CSV (with a status column) if you need a record of what was entered.</li></ol>
+  <h2>Tips that save a rerun</h2>
+  <ul><li>Record with a real row of data so dropdowns and checkboxes are recorded the way the site expects.</li><li>Dropdown values can be the text you see (<code>Viet Nam</code>) or the hidden value — both work. Several choices in one cell: <code>Red; Blue</code>.</li><li>Checkbox columns can be <code>yes/no</code>, <code>x</code>/empty or <code>1/0</code>. Use the step's <b>Tick from data</b> field.</li><li>Excel dates such as <code>05/11/2026</code> are converted for date fields.</li><li>Add a <b>Wait for element</b> step after Save (for example the “Saved” message) so the next row only starts when the site is ready.</li><li>Run 2–3 rows first with <b>Start at row</b>, then the rest.</li></ul>
+  <div class="end-cta"><a class="cta" href="https://chromewebstore.google.com/search/fillhand" rel="noopener">Add to Chrome — free</a><p>Free: unlimited runs and recording. Running once per spreadsheet row is part of Pro ($8.99/month or $69/year).</p></div>
+  <h2>Related guides</h2>
+  <ul class="related"><li><a href="../guides/google-forms-from-spreadsheet.html">Submit Google Forms from a spreadsheet</a></li><li><a href="../guides/bulk-add-products-from-csv.html">Add products to a shop admin from CSV</a></li><li><a href="../guides/checkboxes-dropdowns-from-csv.html">Checkboxes and dropdowns from CSV columns</a></li></ul>
+</article>
+</main>
+<footer class="foot">
+  <div>
+    <strong>Fillhand</strong>
+    <p>Fill web forms and repeat web tasks — on your own computer.</p>
+  </div>
+  <div>
+    <a href="../guides/fill-web-form-from-excel.html">Fill a form from Excel</a>
+    <a href="../guides/google-forms-from-spreadsheet.html">Google Forms from a sheet</a>
+    <a href="../guides/bulk-add-products-from-csv.html">Products from CSV</a>
+    <a href="../guides/checkboxes-dropdowns-from-csv.html">Checkboxes &amp; dropdowns</a>
+    <a href="../guides/update-records-from-list-of-links.html">Loop over links</a>
+    <a href="../guides/same-client-into-many-portals.html">One client, many portals</a>
+  </div>
+  <div>
+    <a href="../imacros-alternative.html">iMacros alternative</a>
+    <a href="../autofill-alternative.html">Autofill without limits</a>
+    <a href="../teams.html">For IT &amp; teams</a>
+    <a href="../privacy.html">Privacy</a>
+    <a href="../vi/index.html">Tiếng Việt</a>
+    <a href="https://github.com/hoanghoang290393/hoanghoang290393.github.io/issues">Support</a>
+  </div>
+</footer>
+</body>
+</html>

@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Open a list of links from Excel and update each page</title>
+<meta name="description" content="Loop over URLs from a CSV: open each record, edit fields, save, and read values back into a results file.">
+<link rel="canonical" href="https://hoanghoang290393.github.io/fillhand/guides/update-records-from-list-of-links.html">
+
+<meta property="og:title" content="Open a list of links from Excel and update each page">
+<meta property="og:description" content="Loop over URLs from a CSV: open each record, edit fields, save, and read values back into a results file.">
+<meta property="og:image" content="https://hoanghoang290393.github.io/fillhand/img/en-1.png">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../img/icon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../site.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"HowTo","name":"Open a list of links from Excel and update each page","description":"Loop over URLs from a CSV: open each record, edit fields, save, and read values back into a results file."}</script>
+</head>
+<body>
+<header class="top">
+  <a class="brand" href="../index.html"><img src="../img/icon.svg" alt="" width="28" height="28"> Fillhand</a>
+  <nav>
+    <a href="../guides/fill-web-form-from-excel.html">Guides</a>
+    <a href="../imacros-alternative.html">iMacros</a>
+    <a href="../pricing.html">Pricing</a>
+    <a href="../teams.html">Teams</a>
+    <a class="nav-cta" href="https://chromewebstore.google.com/search/fillhand" rel="noopener">Install</a>
+  </nav>
+</header>
+<main>
+
+<article class="prose">
+  <p class="eyebrow">Guide</p>
+  <h1>Open each link in a spreadsheet, change something, save — and collect results</h1>
+  <p class="lead">A column of record URLs (orders, tickets, listings) and the same edit to make on each. Or a value to read from each page into your sheet.</p>
+  <div class="callout"><strong>What you need:</strong> Chrome, the free Fillhand extension and your sheet with a URL column. No account, no code. Your data never leaves your computer.</div>
+  <h2>Step by step</h2>
+  <ol class="steps"><li>Record the change on one record page.</li><li>Edit the first step (<b>Go to page</b>) and set the URL to <code>{{row.URL}}</code>.</li><li>Add <b>Read value</b> steps for anything you want back (status, total, new ID). They appear as columns in the results.</li><li>Import the sheet on <b>Data</b>, attach it to the macro, and run.</li><li>Export results as CSV — your original columns, plus the values read, plus ✓/✗ per row.</li></ol>
+  <h2>Tips that save a rerun</h2>
+  <ul><li>Log in to the site once before the run; Fillhand uses your existing session.</li><li>For thousands of links, run in batches with <b>Start at row</b> so you can check progress.</li></ul>
+  <div class="end-cta"><a class="cta" href="https://chromewebstore.google.com/search/fillhand" rel="noopener">Add to Chrome — free</a><p>Free: unlimited runs and recording. Running once per spreadsheet row is part of Pro ($8.99/month or $69/year).</p></div>
+  <h2>Related guides</h2>
+  <ul class="related"><li><a href="../guides/fill-web-form-from-excel.html">Fill any web form from Excel</a></li><li><a href="../guides/same-client-into-many-portals.html">Enter the same client into several portals</a></li></ul>
+</article>
+</main>
+<footer class="foot">
+  <div>
+    <strong>Fillhand</strong>
+    <p>Fill web forms and repeat web tasks — on your own computer.</p>
+  </div>
+  <div>
+    <a href="../guides/fill-web-form-from-excel.html">Fill a form from Excel</a>
+    <a href="../guides/google-forms-from-spreadsheet.html">Google Forms from a sheet</a>
+    <a href="../guides/bulk-add-products-from-csv.html">Products from CSV</a>
+    <a href="../guides/checkboxes-dropdowns-from-csv.html">Checkboxes &amp; dropdowns</a>
+    <a href="../guides/update-records-from-list-of-links.html">Loop over links</a>
+    <a href="../guides/same-client-into-many-portals.html">One client, many portals</a>
+  </div>
+  <div>
+    <a href="../imacros-alternative.html">iMacros alternative</a>
+    <a href="../autofill-alternative.html">Autofill without limits</a>
+    <a href="../teams.html">For IT &amp; teams</a>
+    <a href="../privacy.html">Privacy</a>
+    <a href="../vi/index.html">Tiếng Việt</a>
+    <a href="https://github.com/hoanghoang290393/hoanghoang290393.github.io/issues">Support</a>
+  </div>
+</footer>
+</body>
+</html>

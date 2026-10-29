@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Enter the same client into several web portals at once</title>
+<meta name="description" content="Insurance agents, brokers and admins re-key the same details into carrier or government portals. Autofill profiles fill each portal in one click.">
+<link rel="canonical" href="https://hoanghoang290393.github.io/fillhand/guides/same-client-into-many-portals.html">
+
+<meta property="og:title" content="Enter the same client into several web portals at once">
+<meta property="og:description" content="Insurance agents, brokers and admins re-key the same details into carrier or government portals. Autofill profiles fill each portal in one click.">
+<meta property="og:image" content="https://hoanghoang290393.github.io/fillhand/img/en-1.png">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../img/icon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../site.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"HowTo","name":"Enter the same client into several web portals at once","description":"Insurance agents, brokers and admins re-key the same details into carrier or government portals. Autofill profiles fill each portal in one click."}</script>
+</head>
+<body>
+<header class="top">
+  <a class="brand" href="../index.html"><img src="../img/icon.svg" alt="" width="28" height="28"> Fillhand</a>
+  <nav>
+    <a href="../guides/fill-web-form-from-excel.html">Guides</a>
+    <a href="../imacros-alternative.html">iMacros</a>
+    <a href="../pricing.html">Pricing</a>
+    <a href="../teams.html">Teams</a>
+    <a class="nav-cta" href="https://chromewebstore.google.com/search/fillhand" rel="noopener">Install</a>
+  </nav>
+</header>
+<main>
+
+<article class="prose">
+  <p class="eyebrow">Guide</p>
+  <h1>Typing the same client into three portals? Save them once.</h1>
+  <p class="lead">Quote requests, registrations, applications: the details are the same, the portals are different, and none of them talk to each other.</p>
+  <div class="callout"><strong>What you need:</strong> Chrome, the free Fillhand extension and your client details. No account, no code. Your data never leaves your computer.</div>
+  <h2>Step by step</h2>
+  <ol class="steps"><li>Create an autofill profile for the client (or start from the <b>Company details</b> template).</li><li>Open each portal's form and press <kbd>Alt</kbd>+<kbd>Shift</kbd>+<kbd>F</kbd>. Fillhand matches fields by label, name and placeholder, so one profile fits most portals.</li><li>For a portal with odd field names, add a rule with a CSS selector for that field only.</li><li>Doing many clients? Put them in a CSV and record one macro per portal with <code>{{row.Name}}</code> placeholders.</li></ol>
+  <h2>Tips that save a rerun</h2>
+  <ul><li>Mark fields like ID numbers as <b>sensitive</b>: they are never synced or exported.</li><li>Portals that ask for a CAPTCHA pause the run and notify you.</li></ul>
+  <div class="end-cta"><a class="cta" href="https://chromewebstore.google.com/search/fillhand" rel="noopener">Add to Chrome — free</a><p>Free: unlimited runs and recording. Running once per spreadsheet row is part of Pro ($8.99/month or $69/year).</p></div>
+  <h2>Related guides</h2>
+  <ul class="related"><li><a href="../guides/fill-web-form-from-excel.html">Fill any web form from Excel</a></li><li><a href="../guides/update-records-from-list-of-links.html">Update many records from a list of links</a></li></ul>
+</article>
+</main>
+<footer class="foot">
+  <div>
+    <strong>Fillhand</strong>
+    <p>Fill web forms and repeat web tasks — on your own computer.</p>
+  </div>
+  <div>
+    <a href="../guides/fill-web-form-from-excel.html">Fill a form from Excel</a>
+    <a href="../guides/google-forms-from-spreadsheet.html">Google Forms from a sheet</a>
+    <a href="../guides/bulk-add-products-from-csv.html">Products from CSV</a>
+    <a href="../guides/checkboxes-dropdowns-from-csv.html">Checkboxes &amp; dropdowns</a>
+    <a href="../guides/update-records-from-list-of-links.html">Loop over links</a>
+    <a href="../guides/same-client-into-many-portals.html">One client, many portals</a>
+  </div>
+  <div>
+    <a href="../imacros-alternative.html">iMacros alternative</a>
+    <a href="../autofill-alternative.html">Autofill without limits</a>
+    <a href="../teams.html">For IT &amp; teams</a>
+    <a href="../privacy.html">Privacy</a>
+    <a href="../vi/index.html">Tiếng Việt</a>
+    <a href="https://github.com/hoanghoang290393/hoanghoang290393.github.io/issues">Support</a>
+  </div>
+</footer>
+</body>
+</html>
